@@ -1,5 +1,5 @@
 #include <stdint.h>
-#include <stdio.h>
+#include <stdio_checked.h>
 #include "bn.h"
 
 /*

@@ -18,9 +18,9 @@ There may well be room for performance-optimizations and improvements.
 
 */
 
-#include <stdio.h>
+#include <stdio_checked.h>
 #include <stdbool.h>
-#include <assert.h>
+#include <assert_checked.h>
 #include "bn.h"
 
 

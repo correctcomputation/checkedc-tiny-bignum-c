@@ -36,8 +36,8 @@
 */
 
 
-#include <stdio.h>
-#include <string.h> /* for memcpy */
+#include <stdio_checked.h>
+#include <string_checked.h> /* for memcpy */
 #include "bn.h"
 
 /* O(log n) */

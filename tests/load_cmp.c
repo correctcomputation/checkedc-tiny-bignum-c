@@ -6,9 +6,9 @@
 */
 
 
-#include <stdio.h>
-#include <string.h>
-#include <assert.h>
+#include <stdio_checked.h>
+#include <string_checked.h>
+#include <assert_checked.h>
 #include "bn.h"
 
 
