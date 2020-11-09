@@ -19,7 +19,7 @@ import os
 import math
 
 
-TEST_BINARY = "./build/test_random"
+TEST_BINARY = "./build/alltests 6"
 
 
 def run_shell(runthis):
@@ -120,7 +120,8 @@ while i < NTESTS:
   elif operation == RSHIFT:
     expected = oper1 >> oper2
   elif operation == ISQRT:
-		expected = int(math.sqrt(oper1));
+    expected = math.sqrt(oper1);
+  expected = int(expected);
 
 
   # Convert to string to pass to C program
@@ -140,7 +141,7 @@ while i < NTESTS:
 
   # Create the command-string to run in shell
   cmd_string = "%s %s %s %s %s" % (TEST_BINARY, operation, oper1, oper2, expected)
-  if len([e for e in cmd_string.split(" ") if e]) < 5:
+  if len([e for e in cmd_string.split(" ") if e]) < 6:
     # something has gone wrong with making the command-string - abort and retry
     i -= 1
     continue 

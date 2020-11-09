@@ -6,7 +6,7 @@
 
 enum { ADD, SUB, MUL, DIV, AND, OR, XOR, POW, MOD, RSHFT, LSHFT, ISQRT };
 
-int main(int argc, char** argv)
+int randomized_main(int argc, char** argv)
 {
 
   if (argc < 5)

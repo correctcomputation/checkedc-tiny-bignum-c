@@ -13,7 +13,7 @@
 
 
 
-int main()
+int load_cmp_main()
 {
   char sabuf[8192];
   char sbbuf[8192];

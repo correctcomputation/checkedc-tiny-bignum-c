@@ -181,11 +181,11 @@ static struct test oracle[] =
   {'>',  524288, 19, 1},
   {'>', 1048576, 20, 1},
 };
-const int ntests = sizeof(oracle) / sizeof(*oracle);
+static const int ntests = sizeof(oracle) / sizeof(*oracle);
 
 
 
-int main()
+int golden_main()
 {
   struct bn sa, sb, sc, sd;
   uint32_t ia, ib, ic;

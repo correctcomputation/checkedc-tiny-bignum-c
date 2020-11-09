@@ -92,7 +92,7 @@ void divide2(unsigned dividend, unsigned divisor, unsigned* quotient, unsigned* 
   }
 }  /* unsigned_divide */
 
-int main()
+int test_div_main()
 {
   unsigned a,b,q,r;
 

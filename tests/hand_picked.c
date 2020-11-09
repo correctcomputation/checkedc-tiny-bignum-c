@@ -3,7 +3,7 @@
 
 
 int npassed = 0;
-int ntests = 0;
+static int ntests = 0;
 
 
 static void test_evil(void)
@@ -71,7 +71,7 @@ static void test_rshift_largish_number(void)
 
 
 
-int main()
+int hand_picked_main()
 {
   printf("\nRunning hand-picked test cases:\n");
 

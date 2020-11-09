@@ -62,7 +62,7 @@ void factorial(struct bn* n, struct bn* res)
 }
 
 
-int main()
+int factorial_main()
 {
   struct bn num;
   struct bn result;

@@ -295,7 +295,7 @@ static void test_rsa1024(void)
 }
 
 
-int main()
+int rsa_main()
 {
   printf("\n");
   printf("Testing RSA encryption implemented with bignum. \n");
