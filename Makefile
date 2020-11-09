@@ -1,4 +1,4 @@
-CC     := gcc
+CC     := clang
 TSTF   := tests/alltests.c tests/golden.c tests/hand_picked.c tests/load_cmp.c tests/factorial.c tests/randomized.c tests/rsa.c tests/test_div_algo.c
 MACROS := 
 CFLAGS := -I. -Wundef -Wall -Wextra -O3 $(MACROS)
