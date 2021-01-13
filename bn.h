@@ -76,7 +76,7 @@ There may well be room for performance-optimizations and improvements.
 /* Data-holding structure: array of DTYPEs */
 struct bn
 {
-  uint32_t array _Checked[32];
+  DTYPE array _Checked[BN_ARRAY_SIZE];
 };
 
 

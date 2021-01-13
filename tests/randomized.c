@@ -6,7 +6,7 @@
 
 enum { ADD, SUB, MUL, DIV, AND, OR, XOR, POW, MOD, RSHFT, LSHFT, ISQRT };
 
-int randomized_main(int argc, _Array_ptr<_Nt_array_ptr<char>> argv)
+int randomized_main(int argc, _Array_ptr<_Nt_array_ptr<char>> argv : count(argc))
 {
 
   if (argc < 5)
