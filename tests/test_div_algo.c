@@ -40,7 +40,7 @@ static int divide(int dividend, int divisor)
   return answer;
 }
 
-void divide2(unsigned dividend, unsigned divisor, unsigned* quotient, unsigned* remainder)
+void divide2(unsigned dividend, unsigned divisor, _Ptr<unsigned> quotient, _Ptr<unsigned> remainder)
 {
   unsigned t, num_bits;
   unsigned q, bit, d;

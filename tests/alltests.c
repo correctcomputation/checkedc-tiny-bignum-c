@@ -7,9 +7,9 @@ extern int load_cmp_main();
 extern int hand_picked_main();
 extern int golden_main();
 extern int factorial_main();
-extern int randomized_main(int argc, char** argv);
+extern int randomized_main(int argc, _Array_ptr<_Nt_array_ptr<char>> argv);
 
-int main(int argc, char **argv) {
+int main(int argc, _Array_ptr<_Nt_array_ptr<char>> argv : count(argc)) {
   if (argc < 2) 
   {
     printf("ERROR\n\nUsage:\n    %s n ...\n", argv[0]);
