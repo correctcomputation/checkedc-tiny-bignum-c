@@ -18,6 +18,8 @@ There may well be room for performance-optimizations and improvements.
 
 */
 
+#pragma CHECKED_SCOPE on
+
 #include <stdio_checked.h>
 #include <stdbool.h>
 #include <assert_checked.h>
@@ -114,7 +116,7 @@ void bignum_from_string(_Ptr<struct bn> n, _Nt_array_ptr<char> str, int nbytes)
   while (i >= 0)
   {
     tmp = 0;
-    sscanf(&str[i], SSCANF_FORMAT_STR, &tmp);
+    _Unchecked { sscanf(&str[i], SSCANF_FORMAT_STR, &tmp); }
     n->array[j] = tmp;
     i -= (2 * WORD_SIZE); /* step WORD_SIZE hex-byte(s) back in the string. */
     j += 1;               /* step one element forward in the array. */
@@ -135,7 +137,7 @@ void bignum_to_string(_Ptr<struct bn> n, _Nt_array_ptr<char> str : count(nbytes)
   /* reading last array-element "MSB" first -> big endian */
   while ((j >= 0) && (nbytes > (i + 1)))
   {
-    sprintf(&str[i], SPRINTF_FORMAT_STR, n->array[j]);
+    _Unchecked { sprintf(&str[i], SPRINTF_FORMAT_STR, n->array[j]); }
     i += (2 * WORD_SIZE); /* step WORD_SIZE hex-byte(s) forward in the string. */
     j -= 1;               /* step one element back in the array. */
   }
