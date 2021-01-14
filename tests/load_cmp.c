@@ -82,15 +82,15 @@ struct bn id = {};
 
   printf("Verifying to_string function.\n");
 
-  bignum_to_string(&sa, sabuf, sizeof(sabuf));
-  bignum_to_string(&sb, sbbuf, sizeof(sbbuf));
-  bignum_to_string(&sc, scbuf, sizeof(scbuf));
-  bignum_to_string(&sd, sdbuf, sizeof(sdbuf));
+  bignum_to_string(&sa, sabuf, sizeof(sabuf)-1);
+  bignum_to_string(&sb, sbbuf, sizeof(sbbuf)-1);
+  bignum_to_string(&sc, scbuf, sizeof(scbuf)-1);
+  bignum_to_string(&sd, sdbuf, sizeof(sdbuf)-1);
 
-  bignum_to_string(&ia, iabuf, sizeof(iabuf));
-  bignum_to_string(&ib, ibbuf, sizeof(ibbuf));
-  bignum_to_string(&ic, icbuf, sizeof(icbuf));
-  bignum_to_string(&id, idbuf, sizeof(idbuf));
+  bignum_to_string(&ia, iabuf, sizeof(iabuf)-1);
+  bignum_to_string(&ib, ibbuf, sizeof(ibbuf)-1);
+  bignum_to_string(&ic, icbuf, sizeof(icbuf)-1);
+  bignum_to_string(&id, idbuf, sizeof(idbuf)-1);
 
   assert(strcmp(sabuf, iabuf) == 0);
   assert(strcmp(sbbuf, ibbuf) == 0);

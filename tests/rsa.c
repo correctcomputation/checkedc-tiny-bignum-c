@@ -110,7 +110,7 @@ struct bn N = {};
   bignum_from_int(&N, n);
   pow_mod_faster(&M, &E, &N, &C);
   c_result = bignum_to_int(&C);
-  bignum_to_string(&C, buf, sizeof(buf));
+  bignum_to_string(&C, buf, sizeof(buf)-1);
   printf("  %d ^ %d mod %d = %d \n", m, e, n, c_result);
   printf("  %d ^ %d mod %d = %s \n", m, e, n, buf);
 
@@ -120,7 +120,7 @@ struct bn N = {};
   printf("  %d ^ %d mod %d = %d ? \n", c, d, n, m);
   pow_mod_faster(&C, &D, &N, &M);
   m_result = bignum_to_int(&M);
-  bignum_to_string(&M, buf, sizeof(buf));
+  bignum_to_string(&M, buf, sizeof(buf)-1);
   printf("  %d ^ %d mod %d = %d \n", c, d, n, m_result);
   printf("  %d ^ %d mod %d = %s \n", c, d, n, buf);
 
@@ -171,7 +171,7 @@ struct bn N = {};
   bignum_from_int(&N, n);
   pow_mod_faster(&M, &E, &N, &C);
   c_result = bignum_to_int(&C);
-  bignum_to_string(&C, buf, sizeof(buf));
+  bignum_to_string(&C, buf, sizeof(buf)-1);
   printf("  %d ^ %d mod %d = %d \n", m, e, n, c_result);
   printf("  %d ^ %d mod %d = %s \n", m, e, n, buf);
 
@@ -181,7 +181,7 @@ struct bn N = {};
   printf("  %d ^ %d mod %d = %d ? \n", c, d, n, m);
   pow_mod_faster(&C, &D, &N, &M);
   m_result = bignum_to_int(&M);
-  bignum_to_string(&M, buf, sizeof(buf));
+  bignum_to_string(&M, buf, sizeof(buf)-1);
   printf("  %d ^ %d mod %d = %s \n", c, d, n, buf);
   printf("  %d ^ %d mod %d = %d \n", c, d, n, m_result);
 
@@ -229,7 +229,7 @@ struct bn N = {};
   bignum_from_int(&N, n);
   pow_mod_faster(&M, &E, &N, &C);
   c_result = bignum_to_int(&C);
-  bignum_to_string(&C, buf, sizeof(buf));
+  bignum_to_string(&C, buf, sizeof(buf)-1);
   printf("  %d ^ %d mod %d = %d \n", m, e, n, c_result);
   printf("  %d ^ %d mod %d = %s \n", m, e, n, buf);
 
@@ -239,7 +239,7 @@ struct bn N = {};
   printf("  %d ^ %d mod %d = %d ? \n", c, d, n, m);
   pow_mod_faster(&C, &D, &N, &M);
   m_result = bignum_to_int(&M);
-  bignum_to_string(&M, buf, sizeof(buf));
+  bignum_to_string(&M, buf, sizeof(buf)-1);
   printf("  %d ^ %d mod %d = %s \n", c, d, n, buf);
   printf("  %d ^ %d mod %d = %d \n", c, d, n, m_result);
 
@@ -279,7 +279,7 @@ static void test_rsa1024(void)
   bignum_init(&c);
 
   bignum_from_int(&m, x);
-  bignum_to_string(&m, buf, sizeof(buf));
+  bignum_to_string(&m, buf, sizeof(buf)-1);
   printf("m = %s \n", buf);
 
 //printf("  Copied %d bytes into m\n", i);
@@ -288,7 +288,7 @@ static void test_rsa1024(void)
   pow_mod_faster(&m, &e, &n, &c);
   printf("  Done...\n\n");
 
-  bignum_to_string(&c, buf, sizeof(buf));
+  bignum_to_string(&c, buf, sizeof(buf)-1);
   printf("  Decrypting cipher text '");
   int i = 0;
   while (buf[i] != 0)
@@ -305,7 +305,7 @@ static void test_rsa1024(void)
   printf("  Done...\n\n");
 
 
-  bignum_to_string(&m, buf, sizeof(buf));
+  bignum_to_string(&m, buf, sizeof(buf)-1);
   printf("m = %s \n", buf);
 }
 

@@ -122,12 +122,12 @@ void bignum_from_string(_Ptr<struct bn> n, _Nt_array_ptr<char> str, int nbytes)
 }
 
 
-void bignum_to_string(_Ptr<struct bn> n, char *str : itype(_Nt_array_ptr<char>), int nbytes)
+void bignum_to_string(_Ptr<struct bn> n, _Nt_array_ptr<char> str : count(nbytes), int nbytes)
 {
   require(n, "n is null");
   require(str, "str is null");
   require(nbytes > 0, "nbytes must be positive");
-  require((nbytes & 1) == 0, "string format must be in hex -> equal number of bytes");
+  require(((nbytes + 1) & 1) == 0, "string format must be in hex -> equal number of bytes");
 
   int j = BN_ARRAY_SIZE - 1; /* index into array - reading "MSB" first -> big-endian */
   int i = 0;                 /* index into string representation. */

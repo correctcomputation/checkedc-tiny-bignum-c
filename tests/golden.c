@@ -257,13 +257,13 @@ struct bn sd = {};
     }
     else
     {
-      bignum_to_string(&sa, buf, sizeof(buf));
+      bignum_to_string(&sa, buf, sizeof(buf)-1);
       printf("    a = %s \n", buf);
-      bignum_to_string(&sb, buf, sizeof(buf));
+      bignum_to_string(&sb, buf, sizeof(buf)-1);
       printf("    b = %s \n", buf);
-      bignum_to_string(&sc, buf, sizeof(buf));
+      bignum_to_string(&sc, buf, sizeof(buf)-1);
       printf("    c = %s \n", buf);
-      bignum_to_string(&sd, buf, sizeof(buf));
+      bignum_to_string(&sd, buf, sizeof(buf)-1);
       printf("    d = %s \n", buf);
       printf("\n");
     }
