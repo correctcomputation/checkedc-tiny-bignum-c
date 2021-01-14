@@ -36,9 +36,24 @@ struct bn res = {};
   bignum_init(&b);
   bignum_init(&c);
   bignum_init(&res);
-  bignum_from_string(&a, argv[2], strlen(argv[2]));
-  bignum_from_string(&b, argv[3], strlen(argv[3]));
-  bignum_from_string(&c, argv[4], strlen(argv[4]));
+  {
+    int l = strlen(argv[2]);
+    _Nt_array_ptr<char> arg : count(l) =
+      _Assume_bounds_cast<_Nt_array_ptr<char>>(argv[2],count(l));
+    bignum_from_string(&a, arg, l);
+  }
+  {
+    int l = strlen(argv[3]);
+    _Nt_array_ptr<char> arg : count(l) =
+      _Assume_bounds_cast<_Nt_array_ptr<char>>(argv[3],count(l));
+    bignum_from_string(&b, arg, l);
+  }
+  {
+    int l = strlen(argv[4]);
+    _Nt_array_ptr<char> arg : count(l) =
+      _Assume_bounds_cast<_Nt_array_ptr<char>>(argv[4],count(l));
+    bignum_from_string(&c, arg, l);
+  }
 
   struct bn a_before = {};
 struct bn b_before = {};

@@ -97,7 +97,7 @@ int bignum_to_int(_Ptr<struct bn> n)
 }
 
 
-void bignum_from_string(_Ptr<struct bn> n, _Nt_array_ptr<char> str, int nbytes)
+void bignum_from_string(_Ptr<struct bn> n, _Nt_array_ptr<char> str : count(nbytes), int nbytes)
 {
   require(n, "n is null");
   require(str, "str is null");
