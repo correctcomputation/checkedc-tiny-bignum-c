@@ -28,12 +28,6 @@ You will need to [install 3C](https://github.com/correctcomputation/checkedc-cla
 
 Make sure to clone the `checkedc` project into the `checkedc-wrapper` directory as in the instructions. There are important header files that 3C needs. Note the location of the `build/bin` directory, which might change if you use an IDE. Add the build directory to your `PATH` so that both `3c` and `clang` are available.
 
-Note that if you're working on Mac OS, there is a bug in Checked C's `assert_checked.h` header that makes it not compile on the Mac. (Macs are not technically supported by Checked C's compiler.) We have a [fork of the standard Checked C headers](https://github.com/correctcomputation/checkedc)---clone this repo into `checkedc-wrapper` as directed above, instead of using the standard `checkedc` one. Alternatively, if you already have the standard repo installed, you can create a file `assert_bugfix.h` with the following contents:
-```
-#define assert(e) __builtin_expect(!(e), 0)
-```
-and then edit the `tiny-bugnum` files to use this file rather than `assert_checked.h` as directed below.
-
 ## Getting the Repo Ready for the Demo
 
 We start from a fork of the [tiny-bignum project](https://github.com/kokke/tiny-bignum-c). This is a small library with multiple test programs. The rest of this README describes the changes we made starting at [this commit](https://github.com/correctcomputation/checkedc-tiny-bignum-c/commit/1d7a1f9b8e77316187a6b3eae8e68d60a6f9a4d4) (the root of the fork). If you want to go through the tutorial yourself, we recommend cloning this repo and then going to [this commit](https://github.com/correctcomputation/checkedc-tiny-bignum-c/commit/d41d44f2d208fd8f0076cff0b74752d3c60a751c), which corresponds to the beginning of the *Beginning the Conversion* section below. Save this README, though, as it was added to the repo after the work it describes.
